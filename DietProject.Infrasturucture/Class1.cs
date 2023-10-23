@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DietProject.Domain
+namespace DietProject.Infrasturucture
 {
-    internal class Entity
+    internal class Class1
     {
         public int Id { get; set; }
 
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        public int MyProperty { get; set; }
     }
 }
