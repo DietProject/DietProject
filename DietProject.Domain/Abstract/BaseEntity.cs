@@ -9,12 +9,10 @@ namespace DietProject.Domain.Abstract;
 public abstract class BaseEntity  // Bu class dan nesne üretilmediği için abstract yapılır.
 {
     public Guid Id { get; set; } =Guid.NewGuid();
-    public bool IsActive { get; set; }
-
+    public bool IsActive { get; set; } = true;
     public DateTime CreateDate { get; set; }
-
-    public DateTime UpdateDate { get; set; }
-    public DateTime DeletedDate { get; set; }
+    public DateTime? UpdateDate { get; set; }
+    public DateTime? DeletedDate { get; set; }
 
 
 }

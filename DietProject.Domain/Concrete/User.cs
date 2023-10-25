@@ -21,4 +21,5 @@ public class User :BaseEntity
     public float Weight { get; set; }
 
     public DateTime DateofBirth { get; set; }
+    public virtual IEnumerable<Meal> Meals{ get; set; }
 }

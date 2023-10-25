@@ -13,6 +13,5 @@ public class MealDetail :BaseEntity
     public Meal Meal { get; set; }
     public Guid FoodId { get; set; }
     public Food Food { get; set; }
-
-
+    public float Amount { get; set; }
 }

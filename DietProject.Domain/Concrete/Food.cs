@@ -11,14 +11,13 @@ namespace DietProject.Domain.Concrete;
 public class Food : BaseEntity
 
 {
-
     public string Name { get; set; }
 
     public string Description { get; set; }
 
     public float Calorie { get; set; }
 
-    public string Photo { get; set; }
+    public string? Photo { get; set; }
 
     public Portion Portion{ get; set; }
 }

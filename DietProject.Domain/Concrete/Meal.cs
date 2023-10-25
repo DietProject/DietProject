@@ -12,9 +12,6 @@ public class Meal :BaseEntity
 {
     public Guid UserId { get; set; }
     public User User{ get; set; }
-
     public MealType MealType { get; set; }
-
     public IEnumerable<MealDetail> MealDetails { get; set; }
-
 }
