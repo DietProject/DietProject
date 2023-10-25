@@ -83,6 +83,7 @@ namespace DietProject.Infrasturucture.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     MealId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FoodId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Amount = table.Column<float>(type: "real", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),

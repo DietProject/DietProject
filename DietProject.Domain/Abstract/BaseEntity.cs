@@ -13,6 +13,4 @@ public abstract class BaseEntity  // Bu class dan nesne üretilmediği için abs
     public DateTime CreateDate { get; set; }
     public DateTime? UpdateDate { get; set; }
     public DateTime? DeletedDate { get; set; }
-
-
 }

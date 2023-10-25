@@ -13,6 +13,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder)
     {
+        builder.HasQueryFilter(x => x.IsActive);
         builder.Property(x=>x.Email).HasMaxLength(50).HasColumnType("varchar").IsRequired();
         builder.Property(x => x.Name).HasMaxLength(50).HasColumnType("varchar").IsRequired();
         builder.Property(x => x.Password).HasMaxLength(20).HasColumnType("varchar").IsRequired();

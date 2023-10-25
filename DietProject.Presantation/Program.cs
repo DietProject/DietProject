@@ -1,3 +1,7 @@
+
+using DietProject.Infrasturucture.Persistence;
+using Microsoft.EntityFrameworkCore;
+
 namespace DietProject.Presantation
 {
     public class Program
@@ -9,6 +13,7 @@ namespace DietProject.Presantation
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddDbContext<DietContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("cstring")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
