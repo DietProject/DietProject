@@ -1,9 +1,12 @@
-﻿using DietProject.Application.Contract.IServices;
+﻿using DietProject.Application.Contract.IRepository;
+using DietProject.Application.Contract.IServices;
 using DietProject.Application.ViewModels;
+using DietProject.Domain.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,28 +14,78 @@ namespace DietProject.Application.Services;
 
 public class UserService : IUserService
 {
-    public Task AddAsync(UserVM model)
+    private readonly IUserRepository userRepository;
+    public UserService(IUserRepository userRepository)
     {
-        throw new NotImplementedException();
+        this.userRepository = userRepository;
+    }
+    public async Task AddAsync(UserVM model)
+    {
+        await userRepository.AddAsync(
+            new User
+            {
+                Id = model.Id,
+                Name = model.Name,
+                Surname = model.Surname,
+                Email = model.Email,
+                Password = model.Password,
+                Height = model.Height,
+                Weight= model.Weight,
+                DateofBirth=model.DateofBirth
+            }
+        );
     }
 
     public bool Delete(UserVM model)
     {
-        throw new NotImplementedException();
+        return userRepository.Delete(new User
+        {
+            Id = model.Id,
+            Name = model.Name,
+            Surname = model.Surname,
+            Email = model.Email,
+            Password = model.Password,
+            Height = model.Height,
+            Weight = model.Weight,
+            DateofBirth = model.DateofBirth
+        });
     }
 
     public IQueryable<UserVM> GetAll()
     {
-        throw new NotImplementedException();
+        return userRepository.GetAll().Select(s => new UserVM
+        {
+            Id = s.Id,
+            Name = s.Name,
+            Surname = s.Surname,
+            Email = s.Email,
+            Height = s.Height,
+            Weight = s.Weight,
+            DateofBirth = s.DateofBirth
+        });
     }
+
+    //BUNAAA BAAK KESINLIKLE
+
 
     public IQueryable<UserVM> GetAll(Expression<Func<UserVM, bool>> filter)
     {
-        throw new NotImplementedException();
+        IQueryable<UserVM> bosQueryable = Enumerable.Empty<UserVM>().AsQueryable();
+        return bosQueryable;
     }
 
     public bool Update(UserVM model)
     {
-        throw new NotImplementedException();
+        return userRepository.Update(new User
+        {
+            Id = model.Id,
+            Name = model.Name,
+            Surname = model.Surname,
+            Email = model.Email,
+            Password = model.Password,
+            Height = model.Height,
+            Weight = model.Weight,
+            DateofBirth = model.DateofBirth
+        });
     }
 }

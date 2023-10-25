@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DietProject.Application.ViewModels
+namespace DietProject.Application.ViewModels.Base;
+
+public class BaseVM
 {
-    internal class BaseVM
-    {
-    }
+    public Guid Id { get; set; }
 }

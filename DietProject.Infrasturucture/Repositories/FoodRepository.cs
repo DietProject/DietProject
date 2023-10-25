@@ -1,4 +1,4 @@
-﻿,using DietProject.Application.Contract.IRepository;
+﻿using DietProject.Application.Contract.IRepository;
 using DietProject.Domain.Concrete;
 using DietProject.Infrasturucture.Persistence;
 using System;

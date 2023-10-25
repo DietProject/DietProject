@@ -1,4 +1,5 @@
-﻿using DietProject.Domain.Concrete;
+﻿using DietProject.Application.ViewModels.Base;
+using DietProject.Domain.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace DietProject.Application.ViewModels;
 
-public class MealDetailVM
+public class MealDetailVM:BaseVM
 {
-    public Guid Id { get; set; }
     public Guid MealId { get; set; }
     public MealVM Meal { get; set; }
     public Guid FoodId { get; set; }

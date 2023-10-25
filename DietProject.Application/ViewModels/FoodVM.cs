@@ -1,4 +1,5 @@
-﻿using DietProject.Domain.Enum;
+﻿using DietProject.Application.ViewModels.Base;
+using DietProject.Domain.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace DietProject.Application.ViewModels;
 
-public class FoodVM
+public class FoodVM:BaseVM
 {
-    public Guid Id { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
     public float Calorie { get; set; }

@@ -1,12 +1,13 @@
-﻿using System;
+﻿using DietProject.Application.Contract.IServices.IBase;
+using DietProject.Application.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DietProject.Application.Contract.IServices
+namespace DietProject.Application.Contract.IServices;
+
+public interface IUserService:IBaseService<UserVM>
 {
-    internal interface IUserService
-    {
-    }
 }

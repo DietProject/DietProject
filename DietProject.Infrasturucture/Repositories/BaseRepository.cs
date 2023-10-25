@@ -26,7 +26,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity, new()
 
     public bool Delete(T entity)
     {
-        if (_context.Set<T>().Contains(entity))
+        if (_context.Set<T>().Find(entity.Id) !=null)
         {
             entity.IsActive = false;
             _context.SaveChangesAsync();
@@ -47,7 +47,7 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity, new()
 
     public bool Update(T entity)
     {
-        if (_context.Set<T>().Contains(entity))
+        if (_context.Set<T>().Find(entity.Id) != null)
         {
             _context.Entry(entity).State =EntityState.Modified;
             _context.SaveChangesAsync();

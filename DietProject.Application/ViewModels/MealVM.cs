@@ -1,4 +1,5 @@
-﻿using DietProject.Domain.Concrete;
+﻿using DietProject.Application.ViewModels.Base;
+using DietProject.Domain.Concrete;
 using DietProject.Domain.Enum;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace DietProject.Application.ViewModels;
 
-public class MealVM
+public class MealVM:BaseVM
 {   
-    public Guid Id { get; set; }
     public Guid UserId { get; set; }
     public UserVM User { get; set; }
     public MealType MealType { get; set; }
