@@ -21,7 +21,9 @@ public class UserService : IUserService
     }
     public async Task AddAsync(UserVM model)
     {
-        await userRepository.AddAsync(
+        if (!ContainsUser(model))
+        {
+            await userRepository.AddAsync(
             new User
             {
                 Id = model.Id,
@@ -30,10 +32,10 @@ public class UserService : IUserService
                 Email = model.Email,
                 Password = model.Password,
                 Height = model.Height,
-                Weight= model.Weight,
-                DateofBirth=model.DateofBirth
-            }
-        );
+                Weight = model.Weight,
+                DateofBirth = model.DateofBirth
+            });
+        };
     }
 
     public bool Delete(UserVM model)
@@ -72,6 +74,16 @@ public class UserService : IUserService
     {
         IQueryable<UserVM> bosQueryable = Enumerable.Empty<UserVM>().AsQueryable();
         return bosQueryable;
+    }
+
+    public bool ContainsUser(UserVM vm)
+    {
+        var entity = userRepository.GetAll().Where(x => x.Email == vm.Email && x.Password==vm.Password);
+        if (entity is null)
+        {
+            return false;
+        }
+        return true;
     }
 
     public bool Update(UserVM model)

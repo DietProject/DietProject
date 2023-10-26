@@ -10,4 +10,5 @@ namespace DietProject.Application.Contract.IServices;
 
 public interface IUserService:IBaseService<UserVM>
 {
+    bool ContainsUser(UserVM vm);
 }
