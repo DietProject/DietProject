@@ -17,6 +17,11 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(x=>x.Email).HasMaxLength(50).HasColumnType("varchar").IsRequired();
         builder.Property(x => x.Name).HasMaxLength(50).HasColumnType("varchar").IsRequired();
         builder.Property(x => x.Password).HasMaxLength(20).HasColumnType("varchar").IsRequired();
+        builder.Property(x => x.Surname).HasMaxLength(50).HasColumnType("varchar").IsRequired();
+        builder.Property(x => x.Height).HasMaxLength(300).HasColumnType("tinyint").IsRequired();
+
+        builder.Property(x => x.Weight).HasMaxLength(300).HasColumnType("tinyint").IsRequired();
+
         builder.HasMany(x => x.Meals)
             .WithOne(m => m.User)
             .HasForeignKey(m => m.UserId);

@@ -24,10 +24,12 @@ namespace DietProject.Presantation.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult UserAdd(UserVM vm)
+        public  IActionResult UserAdd(UserVM vm)
         {
             service.AddAsync(vm);
             return RedirectToAction("Index");
         }
+
+
     }
 }

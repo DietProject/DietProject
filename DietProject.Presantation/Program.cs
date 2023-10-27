@@ -19,8 +19,10 @@ namespace DietProject.Presantation
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddDbContext<DietContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("cstring")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+
             //builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
             var app = builder.Build();
@@ -38,7 +40,7 @@ namespace DietProject.Presantation
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=User}/{action=UserLogin}/{id?}");
+                pattern: "{controller=User}/{action=UserAdd}/{id?}");
 
             app.Run();
         }
