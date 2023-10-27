@@ -2,8 +2,8 @@
 using DietProject.Application.Contract.IServices;
 using DietProject.Application.Services;
 using DietProject.Application.ViewModels;
-using DietProject.Infrasturucture.Persistence;
-using DietProject.Infrasturucture.Repositories;
+using DietProject.Infrastructure.Persistence;
+using DietProject.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DietProject.Presantation.Controllers
@@ -19,12 +19,12 @@ namespace DietProject.Presantation.Controllers
         {
             return View(service.GetAll());
         }
-        public IActionResult UserLogin()
+        public IActionResult UserAdd()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult UserLogin(UserVM vm)
+        public IActionResult UserAdd(UserVM vm)
         {
             service.AddAsync(vm);
             return RedirectToAction("Index");

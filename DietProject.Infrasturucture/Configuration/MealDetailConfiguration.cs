@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DietProject.Infrasturucture.Configuration;
+namespace DietProject.Infrastructure.Configuration;
 
 public class MealDetailConfiguration : IEntityTypeConfiguration<MealDetail>
 {

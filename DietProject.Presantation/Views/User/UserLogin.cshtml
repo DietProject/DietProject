@@ -1,7 +1,7 @@
 ﻿@model DietProject.Application.ViewModels.UserVM
 
 @{
-    ViewData["Title"] = "UserLogin";
+    ViewData["Title"] = "UserAdd";
 }
 
 <h1>UserLogin</h1>
@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="UserLogin">
+        <form asp-action="UserAdd">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>

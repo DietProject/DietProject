@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace DietProject.Infrasturucture.Migrations
+namespace DietProject.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class initial : Migration

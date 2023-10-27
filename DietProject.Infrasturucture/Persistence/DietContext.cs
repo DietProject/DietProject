@@ -1,6 +1,6 @@
 ﻿using DietProject.Domain.Abstract;
 using DietProject.Domain.Concrete;
-using DietProject.Infrasturucture.Configuration;
+using DietProject.Infrastructure.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DietProject.Infrasturucture.Persistence;
+namespace DietProject.Infrastructure.Persistence;
 
 public class DietContext:DbContext
 {

@@ -1,6 +1,6 @@
 ﻿using DietProject.Application.Contract.IRepository;
 using DietProject.Domain.Abstract;
-using DietProject.Infrasturucture.Persistence;
+using DietProject.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DietProject.Infrasturucture.Repositories;
+namespace DietProject.Infrastructure.Repositories;
 
 public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity, new()
 {

@@ -3,8 +3,8 @@ using DietProject.Application.Contract.IRepository;
 using DietProject.Application.Contract.IServices;
 using DietProject.Application.Services;
 using DietProject.Domain.Abstract;
-using DietProject.Infrasturucture.Persistence;
-using DietProject.Infrasturucture.Repositories;
+using DietProject.Infrastructure.Persistence;
+using DietProject.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace DietProject.Presantation

@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presantation", "Presantation", "{0D7072D9-A379-4245-BF2D-5D71EB09F230}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietProject.Application", "DietProject.Application\DietProject.Application.csproj", "{CB92CD99-5C0D-4037-A67D-7AF9C0ADF4A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DietProject.Application", "DietProject.Application\DietProject.Application.csproj", "{CB92CD99-5C0D-4037-A67D-7AF9C0ADF4A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietProject.Domain", "DietProject.Domain\DietProject.Domain.csproj", "{326C6A9F-2FBB-499F-94F0-44E387CD4FA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DietProject.Domain", "DietProject.Domain\DietProject.Domain.csproj", "{326C6A9F-2FBB-499F-94F0-44E387CD4FA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietProject.Infrasturucture", "DietProject.Infrasturucture\DietProject.Infrasturucture.csproj", "{D84F7646-FA2A-41C5-8917-56508687BF34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DietProject.Infrastructure", "DietProject.Infrasturucture\DietProject.Infrastructure.csproj", "{D84F7646-FA2A-41C5-8917-56508687BF34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietProject.Presantation", "DietProject.Presantation\DietProject.Presantation.csproj", "{27E0B178-87D4-45E6-8F19-349682D6212A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DietProject.Presantation", "DietProject.Presantation\DietProject.Presantation.csproj", "{27E0B178-87D4-45E6-8F19-349682D6212A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
