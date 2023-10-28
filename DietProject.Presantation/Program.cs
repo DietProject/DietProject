@@ -23,6 +23,10 @@ namespace DietProject.Presantation
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+
+            builder.Services.AddScoped<IFoodService, FoodService>();
+            builder.Services.AddScoped<IFoodRepository, FoodRepository>();
+
             //builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
             var app = builder.Build();
@@ -40,7 +44,7 @@ namespace DietProject.Presantation
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=User}/{action=Index}/{id?}");
+                pattern: "{controller=Food}/{action=Index}/{id?}");
 
             app.Run();
         }

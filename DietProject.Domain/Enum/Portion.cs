@@ -17,7 +17,7 @@ public enum Portion
     Dessertspoon = 7,
     SoupSpoons = 8,
     WaterGlass = 9,
-    mlliter = 10,
+    mlLiter = 10,
     Pack = 11,
     Palm = 12,
     TeaGlass = 13,

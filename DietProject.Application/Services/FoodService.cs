@@ -30,7 +30,7 @@ public class FoodService : IFoodService
                 Calorie = model.Calorie,
                 Description = model.Description,
                 Photo = model.Photo,
-                Portion = model.Portion
+                Portion = (Domain.Enum.Portion)model.Portion
             }
         );
     }
@@ -44,7 +44,7 @@ public class FoodService : IFoodService
             Calorie = model.Calorie,
             Description = model.Description,
             Photo = model.Photo,
-            Portion = model.Portion
+            Portion = (Domain.Enum.Portion)model.Portion
         });
     }
 
@@ -59,7 +59,7 @@ public class FoodService : IFoodService
             Calorie = s.Calorie,
             Description = s.Description,
             Photo = s.Photo,
-            Portion = s.Portion
+            Portion = (PortionVM)s.Portion
         });
     }
 
@@ -86,7 +86,7 @@ public class FoodService : IFoodService
             Calorie = model.Calorie,
             Description = model.Description,
             Photo = model.Photo,
-            Portion = model.Portion
+            Portion = (Domain.Enum.Portion)model.Portion
         });
     }
 

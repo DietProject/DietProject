@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace DietProject.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,7 +19,7 @@ namespace DietProject.Infrastructure.Migrations
                     Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     Description = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Calorie = table.Column<float>(type: "real", nullable: false),
-                    Photo = table.Column<string>(type: "varchar", nullable: false),
+                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Portion = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -39,9 +39,9 @@ namespace DietProject.Infrastructure.Migrations
                     Email = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     Password = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: false),
                     Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Height = table.Column<byte>(type: "tinyint", nullable: false),
-                    Weight = table.Column<float>(type: "real", nullable: false),
+                    Surname = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    Height = table.Column<byte>(type: "tinyint", maxLength: 300, nullable: false),
+                    Weight = table.Column<byte>(type: "tinyint", maxLength: 300, nullable: false),
                     DateofBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietProject.Infrastructure.Migrations
 {
     [DbContext(typeof(DietContext))]
-    [Migration("20231027135423_Configure")]
-    partial class Configure
+    [Migration("20231028141104_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,8 +54,7 @@ namespace DietProject.Infrastructure.Migrations
                         .HasColumnType("varchar");
 
                     b.Property<string>("Photo")
-                        .IsRequired()
-                        .HasColumnType("varchar");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Portion")
                         .HasColumnType("int");

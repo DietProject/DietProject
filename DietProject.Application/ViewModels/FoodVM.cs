@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace DietProject.Application.ViewModels;
 
-public class FoodVM:BaseVM
+public class FoodVM : BaseVM
 {
+
     public string Name { get; set; }
     public string Description { get; set; }
     public float Calorie { get; set; }
     public string? Photo { get; set; }
-    public Portion Portion { get; set; }
+    public PortionVM Portion { get; set; }
 }

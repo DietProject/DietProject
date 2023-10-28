@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace DietProject.Infrasturucture.Migrations
+namespace DietProject.Infrastructure.Migrations
 {
     [DbContext(typeof(DietContext))]
     partial class DietContextModelSnapshot : ModelSnapshot
@@ -51,8 +51,7 @@ namespace DietProject.Infrasturucture.Migrations
                         .HasColumnType("varchar");
 
                     b.Property<string>("Photo")
-                        .IsRequired()
-                        .HasColumnType("varchar");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Portion")
                         .HasColumnType("int");

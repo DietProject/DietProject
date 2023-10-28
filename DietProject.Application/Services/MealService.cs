@@ -25,7 +25,7 @@ public class MealService : IMealService
             new Meal
             {
                 Id = model.Id,
-                MealType= model.MealType,
+                MealType= (Domain.Enum.MealType)model.MealType,
                 CreateDate=model.CreateDate,
                 User = new User {
                     Id = model.UserId,
@@ -46,7 +46,7 @@ public class MealService : IMealService
         return mealRepository.DeleteAsync(new Meal
         {
             Id = model.Id,
-            MealType = model.MealType,
+            MealType = (Domain.Enum.MealType)model.MealType,
             CreateDate = model.CreateDate,
             User = new User
             {
@@ -69,7 +69,7 @@ public class MealService : IMealService
         return mealRepository.GetAll().Select(s => new MealVM
         {
             Id = s.Id,
-            MealType = s.MealType,
+            MealType = (MealTypeVM)s.MealType,
             CreateDate = s.CreateDate,
             User = new UserVM
             {
@@ -104,7 +104,7 @@ public class MealService : IMealService
         return mealRepository.Update(new Meal
         {
             Id = model.Id,
-            MealType = model.MealType,
+            MealType = (Domain.Enum.MealType)model.MealType,
             CreateDate = model.CreateDate,
             User = new User
             {

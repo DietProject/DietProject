@@ -15,6 +15,5 @@ public class FoodConfiguration : IEntityTypeConfiguration<Food>
         builder.HasQueryFilter(x => x.IsActive);
         builder.Property(x => x.Name).HasMaxLength(50).HasColumnType("varchar").IsRequired();
         builder.Property(x => x.Description).HasMaxLength(100).HasColumnType("varchar").IsRequired();
-        builder.Property(x => x.Photo).HasColumnType("varchar").IsRequired();
     }
 }
