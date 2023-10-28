@@ -67,11 +67,11 @@
 					@Html.DisplayFor(modelItem => item.Id)
 				</td>
 				<td>
-					@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+					@Html.ActionLink("Edit", "UserUpdate", new {  id=item.Id  }) |
 					@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
 				    @Html.ActionLink("Delete", "UserDelete", new {  id=item.Id  }) 
-@* 					<a class="btn btn-danger" href="@Url.Action("UserDelete", new { id = item.Id })">Sil</a>
- *@				</td>
+
+			</td>
 			</tr>
 		}
 	</tbody>

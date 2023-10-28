@@ -26,7 +26,7 @@ public class MealRepository : BaseRepository<Meal>, IMealRepository
     //   return await _context.Meals.Include(x => x.MealDetails).ThenInclude(x => x.Food).Where(x => x.UserId == user.Id).Select(x => new
     //    {
     //        x.
-    //    }).ToLisat()
+    //    }).ToList()
     //}
 
     // Bu kod ile iki tabloyu birbirine bağlıyoruz.

@@ -42,6 +42,17 @@ namespace DietProject.Presantation.Controllers
 			return RedirectToAction("Index");
 		}
 
+		public async Task<IActionResult> UserUpdate(Guid id)
+		{
+			var model =await service.GetAsyncById(id);
+			return View(model);
+		}
 
+		[HttpPost]
+		public IActionResult UserUpdate(UserVM user)
+		{
+			service.Update(user);
+			return RedirectToAction("Index");
+		}
 	}
 }
