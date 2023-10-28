@@ -41,9 +41,9 @@ public class MealService : IMealService
         );
     }
 
-    public bool Delete(MealVM model)
+    public Task DeleteAsync(MealVM model)
     {
-        return mealRepository.Delete(new Meal
+        return mealRepository.DeleteAsync(new Meal
         {
             Id = model.Id,
             MealType = model.MealType,
@@ -61,6 +61,8 @@ public class MealService : IMealService
             }
         });
     }
+
+
 
     public IQueryable<MealVM> GetAll()
     {
@@ -92,7 +94,12 @@ public class MealService : IMealService
         return bosQueryable;
     }
 
-    public bool Update(MealVM model)
+	public Task<MealVM> GetAsyncById(Guid id)
+	{
+		throw new NotImplementedException();
+	}
+
+	public bool Update(MealVM model)
     {
         return mealRepository.Update(new Meal
         {

@@ -10,8 +10,9 @@ namespace DietProject.Application.Contract.IRepository;
 
 public interface IBaseRepository<T> where T:BaseEntity,new() 
 {
-    Task AddAsync(T entity);
-    bool Delete(T entity);
+	Task<T> GetAsyncById(Guid id);
+	Task AddAsync(T entity);
+    Task DeleteAsync(T entity);
     bool Update(T entity);
     IQueryable<T> GetAll();
     IQueryable<T> GetAll(Expression<Func<T,bool>> filter);

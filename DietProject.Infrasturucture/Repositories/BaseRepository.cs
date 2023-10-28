@@ -2,6 +2,7 @@
 using DietProject.Domain.Abstract;
 using DietProject.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,20 +21,25 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity, new()
     }
     public async Task AddAsync(T entity)
     {
-       await _context.Set<T>().AddAsync(entity);
-       await _context.SaveChangesAsync();
+        await _context.Set<T>().AddAsync(entity);
+        await _context.SaveChangesAsync();
     }
 
-    public bool Delete(T entity)
+
+
+	public async Task DeleteAsync(T entity)
     {
-        if (_context.Set<T>().Find(entity.Id) !=null)
+        var result = _context.Set<T>().Find(entity.Id);
+
+		if (result != null)
         {
-            entity.IsActive = false;
-            _context.SaveChangesAsync();
-            return true;
-        }     
-        return false;
-    }
+            result.IsActive =false;
+            _context.Update(result)
+;           await _context.SaveChangesAsync();
+           
+        }
+       
+	}
 
     public IQueryable<T> GetAll()
     {
@@ -45,14 +51,21 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity, new()
         return _context.Set<T>().Where(filter);
     }
 
-    public bool Update(T entity)
+	public async Task<T> GetAsyncById(Guid id)
+	{
+        return await _context.Set<T>().FirstOrDefaultAsync(x=> x.Id == id);
+	}
+
+	public bool Update(T entity)
     {
         if (_context.Set<T>().Find(entity.Id) != null)
         {
-            _context.Entry(entity).State =EntityState.Modified;
+            _context.Entry(entity).State = EntityState.Modified;
             _context.SaveChangesAsync();
             return true;
         }
         return false;
     }
+
+
 }

@@ -1,5 +1,6 @@
 ﻿using DietProject.Application.Contract.IRepository;
 using DietProject.Application.Contract.IServices;
+using DietProject.Application.Contract.IServices.IBase;
 using DietProject.Application.ViewModels;
 using DietProject.Domain.Concrete;
 using System;
@@ -34,9 +35,9 @@ public class FoodService : IFoodService
         );
     }
 
-    public bool Delete(FoodVM model)
+    public Task DeleteAsync(FoodVM model)
     {
-        return foodRepository.Delete(new Food
+        return foodRepository.DeleteAsync(new Food
         {
             Id = model.Id,
             Name = model.Name,
@@ -46,6 +47,8 @@ public class FoodService : IFoodService
             Portion = model.Portion
         });
     }
+
+
 
     public IQueryable<FoodVM> GetAll()
     {
@@ -69,7 +72,12 @@ public class FoodService : IFoodService
         return bosQueryable;
     }
 
-    public bool Update(FoodVM model)
+	public Task<FoodVM> GetAsyncById(Guid id)
+	{
+		throw new NotImplementedException();
+	}
+
+	public bool Update(FoodVM model)
     {
         return foodRepository.Update(new Food
         {
@@ -81,4 +89,6 @@ public class FoodService : IFoodService
             Portion = model.Portion
         });
     }
+
+
 }

@@ -18,7 +18,7 @@ namespace DietProject.Presantation
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddDbContext<DietContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("cstring")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+            builder.Services.AddDbContext<DietContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("cstring")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)) ;
 
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -40,7 +40,7 @@ namespace DietProject.Presantation
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=User}/{action=UserAdd}/{id?}");
+                pattern: "{controller=User}/{action=Index}/{id?}");
 
             app.Run();
         }

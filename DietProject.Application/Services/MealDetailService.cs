@@ -30,9 +30,9 @@ public class MealDetailService : IMealDetailService
     }
 
 
-    public bool Delete(MealDetailVM model)
+    public Task DeleteAsync(MealDetailVM model)
     {
-        return mealDetailRepository.Delete(new MealDetail
+        return mealDetailRepository.DeleteAsync(new MealDetail
         {
             Id = model.Id,
             Amount =model.Amount,
@@ -47,6 +47,7 @@ public class MealDetailService : IMealDetailService
            
         });
     }
+
 
     public IQueryable<MealDetailVM> GetAll()
     {
@@ -66,7 +67,12 @@ public class MealDetailService : IMealDetailService
         return bosQueryable;
     }
 
-    public bool Update(MealDetailVM model)
+	public Task<MealDetailVM> GetAsyncById(Guid id)
+	{
+		throw new NotImplementedException();
+	}
+
+	public bool Update(MealDetailVM model)
     {
         return mealDetailRepository.Update(new MealDetail
         {
