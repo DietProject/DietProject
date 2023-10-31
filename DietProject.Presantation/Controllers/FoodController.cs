@@ -22,7 +22,6 @@ namespace DietProject.Presantation.Controllers
             return View();
         }
 
-
         [HttpPost]
         public async Task<IActionResult> FoodAdd(FoodVM vm)
         {
