@@ -40,7 +40,6 @@ namespace DietProject.Presantation.Controllers
             await service.DeleteAsync(Food);
             return RedirectToAction("Index");
         }
-
         public async Task<IActionResult> FoodUpdate(Guid id)
         {
             var model = await service.GetAsyncById(id);
@@ -53,12 +52,5 @@ namespace DietProject.Presantation.Controllers
             service.Update(Food);
             return RedirectToAction("Index");
         }
-
-
-
-
-
-
-
     }
 }

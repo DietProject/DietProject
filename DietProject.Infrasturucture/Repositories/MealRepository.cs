@@ -12,14 +12,9 @@ namespace DietProject.Infrastructure.Repositories;
 
 public class MealRepository : BaseRepository<Meal>, IMealRepository
 {
-
-    private readonly DietContext _context;
     public MealRepository(DietContext context) : base(context)
     {
-        _context = context;
     }
-
-        
 
     //public Task<List<Meal>> GetAll(User user)
     //{

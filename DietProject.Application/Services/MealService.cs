@@ -21,22 +21,12 @@ public class MealService : IMealService
     }
     public async Task AddAsync(MealVM model)
     {
-        await mealRepository.AddAsync(
+         await mealRepository.AddAsync(
             new Meal
             {
-                Id = model.Id,
                 MealType= (Domain.Enum.MealType)model.MealType,
-                CreateDate=model.CreateDate,
-                User = new User {
-                    Id = model.UserId,
-                    Name = model.User.Name,
-                    Surname = model.User.Surname,
-                    Email = model.User.Email,
-                    Password = model.User.Password,
-                    Height = model.User.Height,
-                    Weight = model.User.Weight,
-                    DateofBirth = model.User.DateofBirth
-                }
+                MealDate =model.MealDate,
+                UserId = model.UserId,
             }
         );
     }
@@ -47,7 +37,7 @@ public class MealService : IMealService
         {
             Id = model.Id,
             MealType = (Domain.Enum.MealType)model.MealType,
-            CreateDate = model.CreateDate,
+            MealDate = model.MealDate,
             User = new User
             {
                 Id = model.UserId,
@@ -70,7 +60,7 @@ public class MealService : IMealService
         {
             Id = s.Id,
             MealType = (MealTypeVM)s.MealType,
-            CreateDate = s.CreateDate,
+            MealDate = s.MealDate,
             User = new UserVM
             {
                 Id = s.User.Id,
@@ -105,7 +95,7 @@ public class MealService : IMealService
         {
             Id = model.Id,
             MealType = (Domain.Enum.MealType)model.MealType,
-            CreateDate = model.CreateDate,
+            MealDate = model.MealDate,
             User = new User
             {
                 Id = model.UserId,

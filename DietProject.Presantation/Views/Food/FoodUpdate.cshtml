@@ -1,12 +1,17 @@
 ﻿@using DietProject.Application.ViewModels;
 @model DietProject.Application.ViewModels.FoodVM
+
 @{
-    ViewData["Title"] = "FoodAdd";
+    ViewData["Title"] = "FoodUpdate";
 }
+
+<h1>FoodUpdate</h1>
+
+<h4>FoodVM</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="FoodAdd">
+        <form asp-action="FoodUpdate">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
@@ -28,13 +33,13 @@
                 <input asp-for="Photo" class="form-control" />
                 <span asp-validation-for="Photo" class="text-danger"></span>
             </div>
-            <div class="form-group">
+          <div class="form-group">
                 <label asp-for="Portion" class="control-label"></label>            
                 <select asp-for="Portion" asp-items="Html.GetEnumSelectList<PortionVM>()"></select>
                 <span asp-validation-for="Portion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>

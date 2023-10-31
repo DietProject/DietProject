@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietProject.Infrastructure.Migrations
 {
     [DbContext(typeof(DietContext))]
-    [Migration("20231028141104_Initial")]
-    partial class Initial
+    [Migration("20231031103503_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

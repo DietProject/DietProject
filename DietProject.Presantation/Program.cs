@@ -27,6 +27,11 @@ namespace DietProject.Presantation
             builder.Services.AddScoped<IFoodService, FoodService>();
             builder.Services.AddScoped<IFoodRepository, FoodRepository>();
 
+            builder.Services.AddScoped<IMealRepository, MealRepository>();
+            builder.Services.AddScoped<IMealService, MealService>();
+
+
+
             //builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
             var app = builder.Build();

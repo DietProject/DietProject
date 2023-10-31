@@ -1,0 +1,44 @@
+﻿@using DietProject.Application.ViewModels;
+@model DietProject.Application.ViewModels.MealVM
+
+@{
+    ViewData["Title"] = "CreateMeal";
+}
+
+<h1>CreateMeal</h1>
+
+<h4>MealVM</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateMeal">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden>
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId " class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MealType" class="control-label"></label>
+                <select asp-for="MealType" asp-items="Html.GetEnumSelectList<MealTypeVM>()"></select>
+                <span asp-validation-for="MealType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MealDate" class="control-label"></label>
+                <input asp-for="MealDate" class="form-control" />
+                <span asp-validation-for="MealDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -24,9 +24,6 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity, new()
         await _context.Set<T>().AddAsync(entity);
         await _context.SaveChangesAsync();
     }
-
-
-
 	public async Task DeleteAsync(T entity)
     {
         var result = _context.Set<T>().Find(entity.Id);

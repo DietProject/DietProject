@@ -14,6 +14,6 @@ public class MealVM:BaseVM
     public Guid UserId { get; set; }
     public UserVM User { get; set; }
     public MealTypeVM MealType { get; set; }
-    public DateTime CreateDate { get; set; }
+    public DateTime MealDate { get; set; }
     public IEnumerable<MealDetailVM> MealDetails { get; set; }
 }

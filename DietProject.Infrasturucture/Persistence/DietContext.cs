@@ -31,10 +31,15 @@ public class DietContext:DbContext
                 case EntityState.Added:
                     entry.Entity.CreateDate = DateTime.Now;
                     break;
-                case EntityState.Deleted:
-                    entry.Entity.DeletedDate = DateTime.Now;
-                    break;
+                //case EntityState.Deleted:
+                    
+                //    break;
                 case EntityState.Modified:
+                    if (entry.Entity.IsActive==false)
+                    {
+                        entry.Entity.DeletedDate = DateTime.Now;
+                        break;
+                    }
                     entry.Entity.UpdateDate = DateTime.Now;
                     break;
                     default: break;

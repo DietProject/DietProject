@@ -1,22 +1,16 @@
 ﻿@model IEnumerable<DietProject.Application.ViewModels.UserVM>
-
 @{
 	ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
-
+<h1>Users</h1>
 <p>
-	<a asp-action="Create">Create New</a>
+	<a asp-action="UserAdd">Add User</a>
 </p>
 <table class="table">
 	<thead>
 		<tr>
 			<th>
 				@Html.DisplayNameFor(model => model.Email)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Password)
 			</th>
 			<th>
 				@Html.DisplayNameFor(model => model.Name)
@@ -33,9 +27,6 @@
 			<th>
 				@Html.DisplayNameFor(model => model.DateofBirth)
 			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Id)
-			</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -44,9 +35,6 @@
 			<tr>
 				<td>
 					@Html.DisplayFor(modelItem => item.Email)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Password)
 				</td>
 				<td>
 					@Html.DisplayFor(modelItem => item.Name)
@@ -64,15 +52,11 @@
 					@Html.DisplayFor(modelItem => item.DateofBirth)
 				</td>
 				<td>
-					@Html.DisplayFor(modelItem => item.Id)
-				</td>
-				<td>
 					@Html.ActionLink("Edit", "UserUpdate", new {  id=item.Id  }) |
-					@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-				    @Html.ActionLink("Delete", "UserDelete", new {  id=item.Id  }) 
-
+				    @Html.ActionLink("Delete", "UserDelete", new {  id=item.Id  }) |
+					@Html.ActionLink("Add Meal", "CreateMeal","Meal", new {  id=item.Id  }) 
 			</td>
-			</tr>
-		}
+			</tr>		
+			}
 	</tbody>
 </table>

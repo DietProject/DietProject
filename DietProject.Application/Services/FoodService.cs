@@ -88,7 +88,6 @@ public class FoodService : IFoodService
         };
 
     }
-
 	public bool Update(FoodVM model)
     {
         return foodRepository.Update(new Food
@@ -101,6 +100,4 @@ public class FoodService : IFoodService
             Portion = (Domain.Enum.Portion)model.Portion
         });
     }
-
-
 }

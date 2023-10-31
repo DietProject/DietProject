@@ -36,8 +36,7 @@ namespace DietProject.Presantation.Controllers
 		}
 		[HttpPost]
 		public async Task<IActionResult> UserDelete(UserVM user)
-		{
-		
+		{		
               await service.DeleteAsync(user);
 			return RedirectToAction("Index");
 		}
