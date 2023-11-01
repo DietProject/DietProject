@@ -1,18 +1,19 @@
 ﻿@using DietProject.Application.ViewModels;
-@model DietProject.Application.ViewModels.CreateMealVM
+@model DietProject.Application.ViewModels.MealVM
 
 @{
-    ViewData["Title"] = "CreateMeal";
+    ViewData["Title"] = "EditMeal";
 }
 
-<h1>CreateMeal</h1>
+<h1>EditMeal</h1>
 
-<h4>CreateMealVM</h4>
+<h4>MealVM</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="CreateMeal">
+        <form asp-action="EditUserMeal">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
                 <label asp-for="UserId" class="control-label"></label>
                 <input asp-for="UserId" class="form-control" />
@@ -32,23 +33,7 @@
             </div>
 
             <div class="form-group">
-                <label asp-for="SelectedFoodId" class="control-label">Foods</label>
-                <select asp-for="SelectedFoodId" class="form-control">
-                    <option>Choose Food</option>
-                    @foreach (var food in Model.Foods)
-                    {
-                        <option value="@food.Id">@food.Name</option>
-                    }
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Amount" class="control-label"></label>
-                <input asp-for="Amount" class="form-control" />
-                <span asp-validation-for="Amount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Getir" class="btn btn-primary" />
             </div>
         </form>
     </div>

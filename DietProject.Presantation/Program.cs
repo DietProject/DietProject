@@ -30,7 +30,8 @@ namespace DietProject.Presantation
             builder.Services.AddScoped<IMealRepository, MealRepository>();
             builder.Services.AddScoped<IMealService, MealService>();
 
-
+            builder.Services.AddScoped<IMealDetailRepository, MealDetailRepository>();
+            builder.Services.AddScoped<IMealDetailService, MealDetailService>();
 
             //builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
@@ -49,7 +50,7 @@ namespace DietProject.Presantation
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Food}/{action=Index}/{id?}");
+                pattern: "{controller=User}/{action=Index}/{id?}");
 
             app.Run();
         }

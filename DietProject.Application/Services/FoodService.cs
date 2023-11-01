@@ -72,23 +72,23 @@ public class FoodService : IFoodService
         return bosQueryable;
     }
 
-	public async Task<FoodVM> GetAsyncById(Guid id)
-	{
+    public async Task<FoodVM> GetAsyncById(Guid id)
+    {
         var model = await foodRepository.GetAsyncById(id);
 
         return new FoodVM()
         {
             Id = model.Id,
             Name = model.Name,
-         Description=model.Description,
+            Description = model.Description,
             Calorie = model.Calorie,
             Photo = model.Photo,
             Portion = (PortionVM)model.Portion,
-         
+
         };
 
     }
-	public bool Update(FoodVM model)
+    public bool Update(FoodVM model)
     {
         return foodRepository.Update(new Food
         {

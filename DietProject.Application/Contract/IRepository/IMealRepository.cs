@@ -9,4 +9,5 @@ namespace DietProject.Application.Contract.IRepository;
 
 public interface IMealRepository:IBaseRepository<Meal>
 {
+    Task<Meal> CreateAsync(Meal meal);
 }

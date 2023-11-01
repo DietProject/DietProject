@@ -59,6 +59,8 @@ public class DietContext:DbContext
     {
         new UserConfiguration().Configure(modelBuilder.Entity<User>());
         new FoodConfiguration().Configure(modelBuilder.Entity<Food>());
+        new MealConfiguration().Configure(modelBuilder.Entity<Meal>());
+        new MealDetailConfiguration().Configure(modelBuilder.Entity<MealDetail>());
 
         base.OnModelCreating(modelBuilder);
     }

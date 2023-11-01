@@ -54,7 +54,8 @@
 				<td>
 					@Html.ActionLink("Edit", "UserUpdate", new {  id=item.Id  }) |
 				    @Html.ActionLink("Delete", "UserDelete", new {  id=item.Id  }) |
-					@Html.ActionLink("Add Meal", "CreateMeal","Meal", new {  id=item.Id  }) 
+					@Html.ActionLink("Add Meal", "CreateMeal","Meal", new {  id=item.Id  }) |
+					@Html.ActionLink("Edit Meal", "EditUserMeal","Meal", new {  id=item.Id  }) 
 			</td>
 			</tr>		
 			}

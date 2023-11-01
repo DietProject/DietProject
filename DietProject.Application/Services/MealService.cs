@@ -21,14 +21,28 @@ public class MealService : IMealService
     }
     public async Task AddAsync(MealVM model)
     {
-         await mealRepository.AddAsync(
-            new Meal
-            {
-                MealType= (Domain.Enum.MealType)model.MealType,
-                MealDate =model.MealDate,
-                UserId = model.UserId,
-            }
-        );
+        await mealRepository.AddAsync(
+           new Meal
+           {
+               MealType = (Domain.Enum.MealType)model.MealType,
+               MealDate = model.MealDate,
+               UserId = model.UserId,
+           }
+       );
+    }
+
+    public async Task<MealVM> CreateAsync(MealVM model)
+    {
+        var result = await mealRepository.CreateAsync(
+              new Meal
+              {
+                  MealType = (Domain.Enum.MealType)model.MealType,
+                  MealDate = model.MealDate,
+                  UserId = model.UserId,
+              }
+          );
+        model.Id = result.Id;
+        return model;
     }
 
     public Task DeleteAsync(MealVM model)
@@ -84,12 +98,31 @@ public class MealService : IMealService
         return bosQueryable;
     }
 
-	public Task<MealVM> GetAsyncById(Guid id)
-	{
-		throw new NotImplementedException();
-	}
+    public async Task<MealVM> GetAsyncById(Guid id)
+    {
+        var model = await mealRepository.GetAsyncById(id);
 
-	public bool Update(MealVM model)
+        return new MealVM
+        {
+            Id = model.Id,
+            MealDate = model.MealDate,
+            MealType = (MealTypeVM)model.MealType,
+            UserId = model.UserId,
+            User = new UserVM
+            {
+                Id = model.User.Id,
+                Name = model.User.Name,
+                Surname = model.User.Surname,
+                Email = model.User.Email,
+                Password = model.User.Password,
+                Height = model.User.Height,
+                Weight = model.User.Weight,
+                DateofBirth = model.User.DateofBirth,
+            },
+        };
+    }
+
+    public bool Update(MealVM model)
     {
         return mealRepository.Update(new Meal
         {

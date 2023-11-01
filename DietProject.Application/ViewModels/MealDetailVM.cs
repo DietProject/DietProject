@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DietProject.Application.ViewModels;
 
-public class MealDetailVM:BaseVM
+public class MealDetailVM : BaseVM
 {
     public Guid MealId { get; set; }
     public MealVM Meal { get; set; }

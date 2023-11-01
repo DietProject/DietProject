@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace DietProject.Application.Contract.IServices;
 
-public interface IMealService:IBaseService<MealVM>
+public interface IMealService : IBaseService<MealVM>
 {
+    Task<MealVM> CreateAsync(MealVM mealVM);
 }
